@@ -3,6 +3,7 @@ package com.learnsphere.service;
 import com.learnsphere.entity.Course;
 import com.learnsphere.repository.CourseRepository;
 
+import java.util.Collections;
 import java.util.List;
 
 public class CourseServiceImpl implements CourseService{
@@ -23,36 +24,31 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public List<Course> getCourseBySkill(String skillName) {
-        return List.of();
+        return courseRepository.findAllBySkill(skillName);
     }
 
     @Override
     public List<Course> getAllCourses() {
-        return List.of();
+        return (List<Course>) courseRepository.findAll();
     }
 
     @Override
     public void saveCourse(Course course) {
-
+        courseRepository.save(course);
     }
 
     @Override
     public void deleteCourse(int courseId) {
-
+        courseRepository.deleteById(courseId);
     }
 
     @Override
     public void updateCourse(Course course) {
-
+        courseRepository.save(course);
     }
 
     @Override
-    public List<Course> getCourseByCourseName(String courseName) {
-        return List.of();
-    }
-
-    @Override
-    public List<Course> getCourseByCourseId(int courseId) {
-        return List.of();
+    public Course getCourseByCourseId(int courseId) {
+        return courseRepository.findById(courseId).get();
     }
 }
