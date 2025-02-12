@@ -24,7 +24,7 @@ public class CourseServiceImpl implements CourseService{
 
     @Override
     public List<Course> getCourseBySkill(String skillName) {
-        return courseRepository.findAllBySkill(skillName);
+        return courseRepository.findAllBySkills(Collections.singletonList(skillName));
     }
 
     @Override

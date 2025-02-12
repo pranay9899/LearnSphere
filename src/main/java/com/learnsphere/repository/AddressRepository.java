@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address,Integer> {
-    ArrayList<Address> findByName(String name);
+    ArrayList<Address> findByStreet(String name);
 
     ArrayList<Address> findByCity(String city);
 

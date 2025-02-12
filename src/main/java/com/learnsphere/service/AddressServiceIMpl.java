@@ -29,7 +29,7 @@ public class AddressServiceIMpl implements AddressService{
 
     @Override
     public ArrayList<Address> getAddressesByName(String name) {
-        return addressRepository.findByName(name);
+        return addressRepository.findByStreet(name);
     }
 
     @Override
