@@ -21,7 +21,7 @@ spring:
     port: 587
     username: user@gmail.com
     password: passkey
-    from: npranay9899@gmail.com
+    from: from@gmail.com
     properties:
       mail:
         smtp:
